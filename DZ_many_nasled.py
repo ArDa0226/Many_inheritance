@@ -21,13 +21,18 @@ class Nissan(Car, Vehicle):
         self.price = 1800000
         self.vehicle_type = 'passenger car'
 
+    def __str__(self):
+        return self.__class__.__name__
+
 
     def horse_power(self):
-        return f'{self.__class__.__name__} has {self.power - 20} horse power,'
+        return self.power - 20
 
 
 nissan = Nissan()
-print('Price -', nissan.price, '$', nissan.horse_power(), nissan.vehicle_type)
+print(nissan.__str__())
+print(nissan.vehicle_type, nissan.price)
+print(f'price - ', nissan.horse_power())
 
 
 
